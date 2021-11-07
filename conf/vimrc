@@ -1,0 +1,58 @@
+" plug: init
+call plug#begin('~/.vim/plug')
+
+  " plug: plugins
+  Plug 'Yggdroot/indentLine'
+  Plug 'ntpeters/vim-better-whitespace'
+
+" plug: end
+call plug#end()
+
+"
+" VIMRC: settings
+"
+set wrap
+set number
+set nobackup
+set smarttab
+set tabstop=2
+set expandtab
+set showmatch
+set noswapfile
+set autoindent
+set shiftwidth=2
+set nowritebackup
+set background=dark
+set backspace=indent,eol,start
+
+try
+
+  "
+  " VIMRC: Whitespace
+  "
+  let g:better_whitespace_enabled=1
+  let g:strip_whitespace_on_save=1
+
+  "
+  " VIMRC: Line Indents
+  "
+  let g:indentLine_leadingSpaceChar = '·'
+  let g:indentLine_leadingSpaceEnabled = 1
+
+  "
+  " VIMRC: Makefile
+  "
+  autocmd FileType make setlocal noexpandtab
+
+  "
+  " VIMRC: Go
+  "
+  let g:go_highlight_methods = 1
+  let g:go_highlight_structs = 1
+  let g:go_highlight_functions = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_extra_types = 1
+  let g:go_highlight_build_constraints = 1
+
+catch
+endtry
